@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 논리연산자 심화 - 논리값이 아닌 일반 데이터도 논리값으로 처리된다.
+        
+        // JS가 false로 처리하는 5개 데이터
+        console.log("NOT: ", !0); // true
+        console.log("NOT: ", !""); // true
+        console.log("NOT: ", !null); // true
+        console.log("NOT: ", !undefined); // true
+        console.log("NOT: ", !NaN); // true
+
+        // true로 처리하는 데이터(5개 제외 모든 데이터)
+        console.log("NOT: ", !10);
+        console.log("NOT: ", !"hello");
+
+        console.log("========================================");
+        //AND(&&)
+        console.log("AND: ", "hello" && 0); // 값1("hello")이 true -> 값2(0) 반환
+        console.log("AND: ", 0 && "hello"); // 값1(0)이 false -> 값1(0) 반환
+        console.log("AND: ", "hello" && "hi"); // 값1("hello")이 true -> 값2("hi") 반환
+        console.log("AND: ", null && ""); // 값1(null)이 false -> 값1(null) 반환
+
+        //OR(||)
+        console.log("OR: ", "hello" || 0); // 값1("hello")이 true -> 값1("hello") 반환
+        console.log("OR: ", 0 || "hello"); // 값1(0)이 false -> 값1("hello") 반환
+        console.log("OR: ", "hello" || "hi"); // 값1("hello")이 true -> 값1("hello") 반환
+        console.log("OR: ", null || ""); // 값1(null)이 false -> 값2("") 반환
+
+
+        
+    </script>
+</head>
+<body>
+    <p> 안녕하세요 </p>
+</body>
+</html>

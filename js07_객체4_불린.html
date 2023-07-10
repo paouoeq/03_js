@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // Boolean 객체 ==> 논리 데이터 관리
+
+        // 1.생성방법
+
+        // 가. false로 처리되는 데이터
+        var n = new Boolean(false);
+        var n = new Boolean(0);
+        var n = new Boolean("");
+        var n = new Boolean(null);
+        var n = new Boolean(undefined);
+        var n = new Boolean(NaN);
+        console.log(n);
+        console.log(n.toString()); // 문자열 false
+        console.log(n.valueOf()); // 논리형 false
+        
+        if(n.toString()) { // "false" -> true
+            console.log("true1");
+        }
+
+        if(n.valueOf()) { // 논리형 false -> false
+            console.log("true2");
+        }
+        
+        // 나. true로 처리되는 데이터
+        var n = new Boolean(10);
+        var n = new Boolean("hello");
+        console.log(n.toString()); // 문자열 true
+        console.log(n.valueOf()); // 논리형 true
+        
+        
+    </script>
+</head>
+<body>
+    <p> 안녕하세요 </p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+   function xyz(n) {
+      let gen = n.substr(7,1);
+      console.log(gen);
+      if(gen == '1' || gen == '3') {
+         return "남"
+      }
+      else if(gen == '2' || gen == '4') {
+         return "여"
+      }
+   }
+   var gender = xyz('811025-1234567');
+   console.log("성별", gender );
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

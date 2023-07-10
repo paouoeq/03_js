@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        /*
+            자주 사용하는 이벤트 타입                          이벤트핸들러
+            button, checkbox: click 이벤트타입           ===>   onclick
+            form 태그의 submit: submit 이벤트타입         ===>   onsubmit   << 중요 !!! >>
+            input 태그: keyup 이벤트타입, focus 이벤트타입 ===>   onkeyup, onfocus
+            select 태그: change 이벤트타입                ===>   opchange
+            img : mouseover 이벤트 타입(마우스 올림)      ===>  onmouseover
+                  mouseout 이벤트 타입(img 밖으로 나감)   ===>  onmouseout
+        */
+        function fun() {
+            console.log("fun" ,event);
+        }
+
+        function key() {
+            console.log("keyup",event);
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="fun()">OK</button>
+    <input type="text" onkeyup="key()" onfocus="fun()"> <!-- 여러개의 이벤트핸들러 사용 가능 -->
+    <select id="cars" name="cars" onchange="fun()">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat">Fiat</option>
+        <option value="audi">Audi</option>
+    </select><br>
+    <input type="checkbox" name="fruit" value="사과" checked="checked" onclick="fun()">사과
+    <input type="checkbox" name="fruit" value="바나나" checked onclick="fun()">바나나
+    <input type="checkbox" name="fruit" value="메론">메론 <br>
+
+    <img src="image/001.png" width="100" height="100" onmouseover="fun()" onmouseout="key()">
+</body>
+</html>

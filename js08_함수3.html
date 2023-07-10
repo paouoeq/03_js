@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // 함수(function)
+
+        // 1. 즉시실행 함수 ==> 함수를 정의하면서 동시에 호출
+
+            // 함수 선언식
+            (function fun1() {
+                console.log("fun");
+            }());
+
+            // 함수 표현식
+            (function () {
+                console.log("fun");
+            }());
+
+
+        // 2. 콜백함수 (매우중요!!!!)
+        /*
+            - 콜백(callback) 함수는 사용자가 호출하지 않고
+            특정 순간에 시스템이 호출하는 함수를 의미한다.
+
+            - 이벤트 처리시 주로 사용(트리거(trigger))
+        */
+
+            function a(n) { // a(b)로 인해 n에 b값(b가 참조하고 있는 함수의 주소값)을 받음
+                n(); // n과b가 함께 참조하는 함수 호출
+            }
+
+            function b() {  // 콜백함수 : 시스템이 호출하는 형태로 사용
+                console.log("callback");
+            }
+
+            a(b); // a를 호출하는데 b가 반응 : 사용자가 함수를 호출하면서 시스템이 호출하는 함수명을 전달한다.
+
+
+
+        // 3. arrow 함수 
+            // 가. 파X 리X
+            // 함수 표현식
+            var fun = function () {
+                console.log("함수 표현식: fun");
+            };
+            fun();
+
+            // arrow 함수
+            var fun = () => {
+                console.log("arrow 함수 표현식: fun");
+            };
+            fun();
+
+            ////////////////////////////////////////////
+
+            // 나. 파O 리X
+            // 파라미터 하나
+                //함수 표현식 
+                var fun2 = function (n){
+                    console.log("함수 표현식 fun2", n);
+                };
+                fun2(1);
+                
+                // arrow 함수
+                var fun2 = (n) => {
+                    console.log("arrow 함수 표현식 fun2", n);
+                };
+                fun2(10);
+                var fun2 = n => {
+                    console.log("arrow 함수 표현식2 fun2", n);
+                };
+                fun2(10);
+
+
+            // 파라미터 두개 이상
+                // 함수 표현식
+                var fun2 = function (n,n2) {
+                    console.log("함수 표현식 fun2", n, n2);
+                };
+                fun2(10,20);
+                
+                // arrow 함수
+                var fun2 = (n,n2) => {
+                    console.log("arrow 함수 표현식 fun2", n, n2);
+                };
+                fun2(10,20);
+
+
+            ////////////////////////////////////////////
+
+
+
+            // 다. 파X 리O
+            // 다중문장 (문장+return문)
+                // 함수 표현식
+                console.log("\n파X 리O\n다중문");   
+                var fun3 = function () {
+                    console.log("함수 표현식 fun3");
+                    return "리턴값";
+                };
+                var result = fun3();
+                console.log("함수 표현식 리턴값:", result);
+                
+                // arrow 함수
+                var fun3 = () => {
+                    console.log("arrow 함수 표현식 fun3");
+                    return "리턴값";
+                };
+                var result = fun3();
+                console.log("arrow 함수 표현식 리턴값:", result);
+                
+                
+            // return문만 있음 -> {}와 return 생략 가능 => return값만 써도 됨
+                // 함수 표현식
+                console.log("\nreturn문만 있을 때");
+                var fun3 = function () {
+                    return "리턴값";
+                };
+                var result = fun3();
+                console.log("함수 표현식 리턴값:", result);
+                
+                // arrow 함수
+                var fun3 = () => "리턴값";
+                var result = fun3();
+                console.log("arrow 함수 표현식 리턴값:", result);
+
+                console.log("#########################################")
+
+
+
+            ////////////////////////////////////////////
+
+            // 라. 파O 리O
+            // 다중문장 (문장+return문)
+                // 함수 표현식
+                console.log("\n다중문");   
+                var fun4 = function (n,n2) {
+                    console.log("함수 표현식 fun4", n, n2);
+                    return n+n2;
+                };
+                var result = fun4(10,20);
+                console.log("함수 표현식 리턴값:", result);
+                
+                // arrow 함수
+                var fun4 = (n,n2) => {
+                    console.log("arrow 함수 표현식 fun4", n, n2);
+                    return n+n2;
+                };
+                var result = fun4(10,20);
+                console.log("arrow 함수 표현식 리턴값:", result);
+                
+                
+            // return문만 있음 -> {}와 return 생략 가능 => return값만 써도 됨
+                // 함수 표현식
+                console.log("\nreturn문만 있을 때");
+                var fun4 = function (n,n2) {
+                    return n+n2;
+                };
+                var result = fun4(10,20);
+                console.log("함수 표현식 리턴값:", result);
+                
+                // arrow 함수
+                var fun4 = (n,n2) => n+n2;
+                var result = fun4(10,20);
+                console.log("arrow 함수 표현식 리턴값:", result);
+                
+                
+                // 활용
+                console.log("\narrow활용 - sort() 내림차순");
+                var arr = [6,2,8,5,1,7,9];
+                arr.sort();
+                console.log(arr); // 오름차순 
+                
+                arr.sort(function(a,b){return b-a;});
+                console.log(arr); // 내림차순 
+                
+                // arrow함수로 변경
+                console.log(arr.sort());
+                arr.sort((a,b) => b-a);
+                console.log(arr);
+
+
+        </script>
+</head>
+<body>
+    <p> 안녕하세요 </p>
+</body>
+</html>

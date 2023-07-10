@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+   var num_I = Number.parseInt(prompt("1.면접 점수값을 입력하시오."));
+   console.log("면접점수 값 %d", num_I);
+   var num_E = Number.parseInt(prompt("2.영어 점수값을 입력하시오."));
+   console.log("영어점수 값 %d", num_E);
+   
+   var avg = (num_I+num_E)/2
+   console.log("평균: %f", avg);
+   if(avg>=80) {
+      console.log("합격여부:합격");
+   } else {
+      console.log("합격여부:불합격");
+   }
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

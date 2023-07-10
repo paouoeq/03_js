@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // String 객체 ==> 문자열 생성
+        var s = "hello";  // 권장 방법
+        console.log(s.length);
+
+        var s = new String("hello");
+        console.log(s.length);
+
+        
+        // 메서드
+        var c = s.charAt(2);  // 특정 문자을 얻어 변수에 저장 가능
+        console.log("1. 특정 문자 얻기:", s.charAt(0), s.charAt(1), c);
+        
+        console.log("2. 문자열 연결:", s.concat(" !!")); // concoat(...n) => 가변인자
+        console.log("2. 문자열 연결:", s.concat(" !!"," ##", " %%%")); // 여러개 지정도 가능
+        console.log("2. 문자열 연결:", s.charAt(1).concat(" !!")); // 특정 문자와 연결할 수도 있음
+        
+        console.log("3. 특정 문자의 위치 얻기:", s.indexOf('e')); // indexOf(searchString, position?)
+        // 물음표의 의미 : 옵션(있어도 되고 없어도 됨)
+        console.log("3. 특정 문자의 위치 얻기:", s.indexOf('e',2)); // position : 시작 위치(해당 위치에서 탐색 시작)
+        console.log("3. 특정 문자의 위치 얻기:", s.indexOf('x',2)); // 못찾으면 -1
+        
+        console.log("4. 부분열:", s.substring(0,4)); // 0부터 4번째 앞(3번쨰)까지의 문자열 반환
+        console.log("4. 부분열:", s.substr(0,3)); // 0부터 시작해서 3개 문자열 반환
+        
+        var s = "HeLLo WoRLd";
+        console.log("5. 대문자:", s.toUpperCase());
+        console.log("6. 소문자:", s.toLowerCase());
+
+        console.log("7. 지정된 문자로 시작하냐?:", s.startsWith("He"), s.startsWith("x")); // 명시된 글자로 시작하는지 확인
+        console.log("8. 지정된 문자로 끝나냐?:", s.endsWith("Ld"), s.endsWith("X")); // 명시된 글자로 끝나는지 확인
+        
+        console.log("9. 변경:", s.replace("L", "X")); // 찾은 첫 문자 하나만 변경
+        // If you replace a value, only the first instance will be replaced.
+        console.log("9. 변경:", s.replaceAll("L", "X")); // 해당 문자 모두 변경
+        
+        var s = "     hello     ";
+        console.log("10. 총길이:", s.length);
+        console.log("10. 공백제거:", s.trim());
+        console.log("10. 공백제거 후 길이:", s.trim().length); // 메서드 체인(메서드 두개 이상 사용)
+
+        var s = "홍길동/이순신/유관순";
+        var arr = s.split("/");
+        console.log("11. 구분자로 분리", arr);
+        
+        var arr = s.split("/", 2); // 몇개만 떼어낼지 정할 수 있음(옵션)
+        console.log("11. 구분자로 분리", arr);
+        
+        console.log("12. 특정 문자 포함 여부?", s.includes("홍길동"));
+        console.log("12. 특정 문자 포함 여부?", s.includes("강감찬"));
+
+        console.log("13. 반복:", s.repeat(2));
+
+        // 원본 출력 ==> 문자열은 변경 안됨 메서드 적용하면 새로운 값을 반환하는 것
+        console.log("원본", s)
+
+
+    </script>
+</head>
+<body>
+    <p> 안녕하세요 </p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 1. 기본형 변수
+        let n = 10;
+        let n2 = n;
+        console.log("변경 전",n,n2); // 10 10 출력
+
+        // 원본인 n값 변경
+        n = 20;
+        console.log("변경 후",n,n2); // 20 10 출력
+
+
+        // 2. 참조형 변수
+        let x = [10,20,30];
+        let x2 = x;
+        console.log("변경 전",x,x2); // [10, 20, 30] [10, 20, 30] 출력
+
+        // 원본인 x값 변경
+        x[0] = 100;
+        console.log("변경 후",x,x2); // [100, 20, 30] [100, 20, 30] 출력
+        
+    </script>
+</head>
+<body>
+    <p> 안녕하세요 </p>
+</body>
+</html>

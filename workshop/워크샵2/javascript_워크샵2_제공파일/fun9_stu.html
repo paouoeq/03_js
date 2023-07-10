@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+   function xyz(n) {
+    let str = ''
+    str += n.toUpperCase();
+    str += "    " + n.toLowerCase();
+    str += "    " + n.split('').reverse().join('');
+    return str
+   }
+
+   var data = xyz('AbCDeF');
+   console.log("데이터", data );
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

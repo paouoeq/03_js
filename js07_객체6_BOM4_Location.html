@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // BOM (Browser Object Mode)
+        // 1. Location 객체 : 웹브라우저 URL 관련
+        console.log(location.href);     // 전체 URL값 : http://127.0.0.1:5500/03_js/js07_%EA%B0%9D%EC%B2%B46_BOM4_Location.html
+        console.log(location.protocol); // http:
+        console.log(location.pathname); // /03_js/js07_%EA%B0%9D%EC%B2%B46_BOM4_Location.html
+        console.log(location.host);     // 127.0.0.1:5500
+        console.log(location.hostname); // 127.0.0.1
+
+        // href -> url을 얻어오고, 변경할 수 있는 속성
+        function req() {
+            location.href="http://www.google.com"; // 자주 사용하는 방법이니 암기!
+        }
+
+        function req2() {
+            location.reload(); // 새로고침하는 method
+        }
+        
+
+    </script>
+</head>
+<body>
+    <p> 안녕하세요 </p>
+    <button onclick="req()">구글</button>
+    <button onclick="req2()">새로고침</button>
+</body>
+</html>
