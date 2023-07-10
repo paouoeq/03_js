@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // DOM Level 0 의 고전방식으로 이벤트 처리
+
+        var xxx = function () { // 익명 함수는 변수에 저장할 수 있음 -> 콜백함수로 사용 가능
+                console.log("button");
+            };
+
+
+
+        function init() {
+            document.querySelector("#chk").onclick = xxx; // 콜백함수(시스템이 함수 호출)
+        }
+        
+
+
+    </script>
+</head>
+<body onload="init()">
+    <button id="chk">변경</button>
+</body>
+</html>

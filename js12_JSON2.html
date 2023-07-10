@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 사용자정의 객체 - JSON
+        
+        // 1. person 객체
+        const person = {
+            // property
+            username:"홍길동",
+            age:20,
+
+            // method
+            getusername:function(){return this.username;}, // 메서드에서 property를 접근할 땐 this. 사용
+            getage:function(){return this.age;},
+
+            setusername:function(name){this.username=name},
+            setage:function(age){this.age=age},
+        };
+
+        // 2. person 객체의 속성(property) 사용
+        console.log(person.username, person.age);
+        console.log(person.getusername(), person.getage());
+        person.setusername("이순신");
+        person.setage(30);
+        console.log(person.getusername(), person.getage());
+    </script>
+</head>
+<body>
+</body>
+</html>

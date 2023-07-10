@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function chk() {
+            var check = document.querySelector("#same_address");
+            var text = document.querySelector("#address2");
+            console.dir(check);
+            console.log(address);
+            if(check.checked == true) {
+                text.value = document.querySelector("#address").value;
+            }
+            else {
+                text.value = ""
+            }
+        }
+
+    </script>
+</head>
+<body>
+    회원주소: <input type="text" value="서울시 서초구" id="address"><br>
+    배송지주소와 동일하면 체크하시오.
+    <input type="checkbox" id="same_address" onclick="chk()">
+    <hr>
+    배송지 주소: <input type="text" id="address2">
+</body>
+</html>
