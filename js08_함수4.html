@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // 함수(function)
+
+        // arrow 함수와 this
+
+        console.log(window, this);
+
+        this.n = 20; // window 객체에 동적으로 n 변수에 20 저장
+        /*                          ▼
+        var x = {aeg:20};           ▼
+        x.name = "홍길동"; // json 객체에 동적으로 값 저장하는 것과 같은 의미
+        console.log(x);
+        */
+
+        var a = { // 익명함수
+            n:10,
+            f:function(){
+                console.log("arrow",this); // this = 사용자 정의 객체
+            }
+        };
+        
+        var b = { // arrow 함수
+            n:10,
+            f:()=>{
+                console.log("익명",this); // this = window 객체(전역객체)
+            }
+        };
+
+        a.f();
+        b.f();
+
+        /*  결론
+                arrow 함수 내의 this는 전역객체를 참조 -> window
+                반면에 익명함수는 익명함수를 가진 객체를 참조 -> b
+        */
+
+        </script>
+</head>
+<body>
+
+</body>
+</html>
